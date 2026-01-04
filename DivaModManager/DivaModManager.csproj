@@ -58,9 +58,6 @@
     <Content Include="change_log_jp.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Downloads\DivaModManager uses this folder as a temporary folder, so do not place files under this folder">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -193,6 +190,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Downloads\" />
     <Folder Include="x64\" />
   </ItemGroup>
 
