@@ -1,0 +1,73 @@
+DivaMoaManager by Enomoto v1.3.1.34
+  Changes (See GitHub for previous changes)
+
+* The English portion was created using translation software. *
+
+----- Specification Changes -------------------------
+
+- ​​For security reasons, the following operating environment requirements have been added:
+・Windows 10 (version 1809 or later) / 64-bit
+・.NET 8.0
+    Runtime download: https://dotnet.microsoft.com/ja-jp/download/dotnet/8.0
+  (Note: Increasing the required version to .NET 8.0 has significantly increased the size of the .exe file.)
+- Mods no longer move to the trash when deleted; they are now completely deleted.
+- Mod updates are now called "Clean Updates" to reflect their actual state.
+  (Note: This is a legacy DMM specification. When you update, almost all files in the mod folder are deleted and replaced with new versions, regardless of whether they were created by you or not. Please be careful.)
+- If an alternative source file is found during an update, it would previously be downloaded from the alternative source file.
+  However, due to standardization, this process is now interrupted and the mod page is opened. We plan to implement it again after checking the processing.
+- The automatic registry registration process at startup has been abolished, and registry registration and deletion can now be performed at will from the Options tab.
+  (Note: Registry registration is used for the one-click installation function)
+- We have revised the specifications to automatically download and install DML on first launch.
+  We apologize for the inconvenience, but please install it by clicking the Update Check button in the upper right corner.
+
+----- Important Changes -------------------------
+
+- ​​Some existing and newly implemented popups are now localized to Japanese.
+  You can set the language upon initial startup.
+- The file "config_e.toml" is now output to the same folder as DivaModManager.exe, allowing you to change detailed settings such as language settings and what to compare when checking for mod duplication.
+  (As this is significantly different from Config.json, please refrain from manually editing Config.json.)
+- If a configuration file exists at startup but cannot be read, the original file is backed up and a new one is generated.
+- When the DMM version changes, the configuration file of the previous version is automatically backed up.
+- Only "Zip," "7z," and "Rar" formats are supported for decompression of compressed files.
+- In accordance with the license, the console version of "7-Zip" (7z.exe) has been included.
+  (Note) Versions other than the included version of 7z.exe (even higher versions) cannot be used. Please be careful.
+- If "WinRAR" (v7.13.0 or later) is installed, it can now be used to decompress RAR files (this is faster than using the included 7-Zip).
+- The libraries used have been completely overhauled, with additions, deletions, and updates.
+  In addition, we've included license files. Please read this if you're interested.
+- We've completely revised the startup and setup checks to prevent the Main Window from appearing in unexpected states.
+- We've provisionally implemented the Options tab.
+- We've added a feature to back up DML and DML configuration files from the Options tab.
+  (Note: There is no automatic loading function for backups. If a configuration file becomes corrupted, you'll need to manually rename it to restore it.)
+- We've made significant changes to the decompression process, standardizing it and correcting conflicts that occurred when multiple decompression processes were run simultaneously, and we've made improvements to ensure stricter size checks.
+
+----- Major Changes -------------------------
+
+- ​​Fixed a bug where a DivaModManager process would be deleted if it was not responding during startup.
+  Also fixed an issue where the process would remain after an abnormal termination during startup.
+- Added a debug mode (do not use during normal use. It is primarily used for outputting trace logs when a bug occurs).
+  Executing "DivaModManager_DebugMode.bat" will run the application in debug mode. Log output has also been completely revised accordingly.
+- The application will now terminate if an error that cannot be fully detected occurs.
+- Prevents launch and update checks while downloads are in progress in the background.
+- When displaying the mod list, a simple check is now performed to check for duplicate folders and the presence of the same mod.
+  These can be individually configured to be visible or hidden in the config_e.toml file in the mod folder or DMM folder.
+- If configuration files such as Config.json and config.toml fail to load, the original files are backed up before being overwritten.
+- Added a Version column.
+- Added a Site column.
+
+----- Medium Changes -------------------------
+
+- ​​Added an icon to open the MM+ folder in the icon area in the upper right corner.
+- For v0.0.14 and v0.0.16 only, the correct version is now displayed even if DML is installed manually.
+- Added descriptions of each parameter to the "config_e.toml" file in each mod folder.
+- Fixed an issue with excessive reading and writing to the configuration file.
+- Added "Homepage Open" to the context menu in the mod list (references "homepage" in mod.json).
+
+----- Minor Changes -------------------------
+
+- ​​Added a tooltip to the Fetch Metadata text box, showing an example of input.
+
+----- Other Changes -------------------------
+
+- ​​Substantial revisions have been made to the minor fixes, too numerous to list here.
+- Substantial revisions have been made to the internal processing, too numerous to list here.
+
